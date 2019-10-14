@@ -1,13 +1,16 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
+import TodoList from './TodoList';
 
 function App() {
 	return (
 		<Provider store={store}>
-			<div>
-				<p>Hello Flux!</p>
-			</div>
+			<TodoList>
+				<div>
+					<p>Hello Flux!</p>
+				</div>
+			</TodoList>
 		</Provider>
 	);
 }
