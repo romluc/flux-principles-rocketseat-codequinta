@@ -1,12 +1,14 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
 	return (
-		<div>
-			<header>
+		<Provider store={store}>
+			<div>
 				<p>Hello Flux!</p>
-			</header>
-		</div>
+			</div>
+		</Provider>
 	);
 }
 
