@@ -13,7 +13,10 @@ class TodoList extends Component {
 	state = {
 		newTodoText: ''
 	};
-	// addNewTodo = () => {};
+
+	addNewTodo = () => {
+		this.props.addTodo(this.state.newTodoText);
+	};
 
 	render() {
 		return (
