@@ -16,6 +16,7 @@ class TodoList extends Component {
 
 	addNewTodo = () => {
 		this.props.addTodo(this.state.newTodoText);
+		this.setState({ newTodoText: '' });
 	};
 
 	render() {
@@ -30,7 +31,7 @@ class TodoList extends Component {
 					value={this.state.newTodoText}
 					onChange={e => this.setState({ newTodoText: e.target.value })}
 				/>
-				<button>New ToDo</button>
+				<button onClick={this.addNewTodo}>New ToDo</button>
 			</div>
 		);
 	}
