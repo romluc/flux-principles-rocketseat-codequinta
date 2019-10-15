@@ -23,6 +23,9 @@ class TodoList extends Component {
 		return (
 			<div>
 				<ul>
+					{this.props.todos.map(todo => (
+						<li key={todo.id}>{todo.text}</li>
+					))}
 					<li>ToDo Item</li>
 				</ul>
 
