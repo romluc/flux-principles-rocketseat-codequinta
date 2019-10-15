@@ -26,7 +26,6 @@ class TodoList extends Component {
 					{this.props.todos.map(todo => (
 						<li key={todo.id}>{todo.text}</li>
 					))}
-					<li>ToDo Item</li>
 				</ul>
 
 				<input
@@ -43,6 +42,7 @@ class TodoList extends Component {
 const mapStateToProps = state => ({
 	todos: state.todos
 });
+
 const mapDispatchToProps = dispatch =>
 	bindActionCreators(todoActions, dispatch);
 
