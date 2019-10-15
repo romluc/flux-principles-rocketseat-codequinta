@@ -1,4 +1,6 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import * as todoActions from './actions/todos';
 
 export default function ToDo() {
 	return (
@@ -12,3 +14,7 @@ export default function ToDo() {
 		</>
 	);
 }
+
+const mapDispatchToProps = dispatch => {
+	bindActionCreators(todoActions, dispatch);
+};

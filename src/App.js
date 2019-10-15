@@ -6,11 +6,7 @@ import TodoList from './TodoList';
 function App() {
 	return (
 		<Provider store={store}>
-			<TodoList>
-				<div>
-					<p>Hello Flux!</p>
-				</div>
-			</TodoList>
+			<TodoList />
 		</Provider>
 	);
 }
