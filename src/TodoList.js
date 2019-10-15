@@ -1,20 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import * as todoActions from './actions/todos';
 
-export default function ToDo() {
-	return (
-		<>
-			<ul>
-				<li>ToDo Item</li>
-			</ul>
+class TodoList extends Component {
+	constructor(props) {
+		super(props);
+		console.log(props);
+	}
 
-			<input type='text' />
-			<button>New ToDo</button>
-		</>
-	);
+	state = {
+		newTodoText: ''
+	};
+	// addNewTodo = () => {};
+
+	render() {
+		return (
+			<div>
+				<ul>
+					<li>ToDo Item</li>
+				</ul>
+
+				<input
+					type='text'
+					value={this.state.newTodoText}
+					onChange={e => this.setState({ newTodoText: e.target.value })}
+				/>
+				<button>New ToDo</button>
+			</div>
+		);
+	}
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch =>
 	bindActionCreators(todoActions, dispatch);
-};
+
+export default connect(
+	null,
+	mapDispatchToProps
+)(TodoList);
